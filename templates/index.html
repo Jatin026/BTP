@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anisotropic Yield Parameter Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Anisotropic Yield Parameters</h1>
+
+        <select id="model-select">
+            <option value="" selected disabled>Select a model</option>
+            <option value="A">Model A</option>
+            <option value="B">Barlat 1989</option>
+            <option value="C">Model C</option>
+        </select>
+
+        <div id="inputs-container"></div>
+        <button id="predict-btn">Predict</button>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
