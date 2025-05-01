@@ -1,72 +1,190 @@
 
+
+/* Import professional fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Reset and base styles with vibrant gradient background */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f7fc; /* professional and clean background */
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #ec4899 100%);
+  background-size: 200% 200%;
+  animation: gradientMovement 15s ease infinite;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #334155;
 }
 
+@keyframes gradientMovement {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Professional container with vibrant accents */
 .container {
-    width: 90%;
-    max-width: 700px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 30px;
-    border-radius: 10px;
+  width: 90%;
+  max-width: 520px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 25, 150, 0.15),
+              0 3px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease;
 }
 
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* Professional heading style with vibrant accent */
 h1 {
-    font-size: 2em;
-    color: #003366;
-    text-align: center;
-    border-bottom: 2px solid #003366;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  margin: 0 0 28px;
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  letter-spacing: -0.01em;
 }
 
-select, input {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 8px 10px;
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1em;
+/* Form element container */
+#inputs-container {
+  width: 100%;
+  text-align: left;
 }
 
+/* Select styling with vibrant focus */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 15px;
+  padding-right: 40px;
+}
+
+/* Form groups for consistent spacing */
+.form-group {
+  margin-bottom: 24px;
+}
+
+/* Professional label styling */
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.95rem;
 }
 
+/* Professional inputs and select styling with vibrant focus states */
+input,
+select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 15px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #1e293b;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+/* Vibrant professional button styling */
 button {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #0055a4;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 10px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  transition: left 0.7s ease;
 }
 
 button:hover {
-    background-color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
 }
 
-#result {
-    background-color: #edf5ff;
-    border-left: 4px solid #003366;
-    margin-top: 20px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 1em;
-    line-height: 1.6em;
+button:hover:before {
+  left: 100%;
 }
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Results section styling with vibrant accent */
+#result {
+  margin-top: 30px;
+  padding: 18px 20px;
+  background-color: #f8fafc;
+  border-left: 4px solid #7c3aed;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 25px;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+  
+  input,
+  select,
+  button {
+    font-size: 0.9rem;
+  }
+}
+

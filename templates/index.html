@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+   
     <div class="container">
         <h1>Anisotropic Yield Parameters</h1>
 
         <select id="model-select">
             <option value="" selected disabled>Select a model</option>
-            <option value="A">Model A</option>
             <option value="B">Barlat 1989</option>
-            <option value="C">Model C</option>
+            <option value="C">Barlat 2000</option>
         </select>
 
-        <div id="inputs-container"></div>
+        <!-- Inputs container will be populated dynamically based on model selection -->
+        <div id="inputs-container">
+            <!-- Default view shows Barlat 1989 fields -->
+        </div>
+       
         <button id="predict-btn">Predict</button>
         <div id="result"></div>
     </div>
+
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
-
